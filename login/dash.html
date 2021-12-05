@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard SS-Box</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css?ver=1.0">
+
+    <script type="text/javascript">
+        function preback() {window.history.forward();}
+        setTimeout("preback()",0);
+        window.onunload=function() {null};
+    </script>  
+
+</head>
+<body>
+
+
+    
+    
+<!-- header section starts  -->
+
+<header>
+
+    <a href="#" class="logo"><i class="fas fa-shield-alt"></i>Dashboard.</a>
+    
+    
+
+
+    <nav class="navbar">
+        <a class="active" href="#home">Video Gallery</a>
+        <a href="#dishes">Setting</a>
+        <a href="#about">about</a>
+        
+    </nav>
+
+    <div class="icons">
+        <i class="fas fa-bars" id="menu-bars"></i>
+        <a href="logout.php"><i class="fas  fa-sign-out-alt" id="search-icon"></i></a>
+        
+       
+    </div>
+
+</header>
+
+<!-- header section ends-->
+
+
+
+
+<!-- search form  -->
+
+<form action="" id="search-form">
+    <input type="search" placeholder="search here..." name="" id="search-box">
+    <label for="search-box" class="fas fa-search"></label>
+    <i class="fas fa-times" id="close"></i>
+</form>
+
+
+
+
+<!-- video Gallery section starts  -->
+
+<section class="home" id="home">
+
+    <h3 class="heading"> gallery</h3>
+
+    <div class="container">
+        <div class="main-video">
+            <div class="video">
+                <video src="video/21_11_17 - 18.02.03.mp4" controls muted autoplay></video>
+                <h3 class="title"> </h3>
+            </div>
+
+        </div>
+        <div class="video-list">
+         <div class="vid active">
+            <video src="video/21_11_17 - 18.02.03.mp4"  muted></video>
+            <h3 class="title"> 01.Parcel had been steal</h3>
+         </div>   
+
+         <div class="vid">
+            <video src="video/21_11_11 - 16.01.51.mp4"  muted></video>
+            <h3 class="title"> 02.try camera</h3>
+         </div>
+
+         <div class="vid">
+            <video src="video/21_11_17 - 17.58.17.mp4"  muted></video>
+            <h3 class="title"> 03.Parcel had be delivered by courier</h3>
+         </div>
+
+         <div class="vid">
+            <video src="video/21_11_17 - 17.53.46.mp4"  muted></video>
+            <h3 class="title"> 04.Courier brendead</h3>
+         </div>
+         
+         <div class="vid">
+            <video src="video/21_11_17 - 18.00.59.mp4"  muted></video>
+            <h3 class="title"> 05.Slow courier</h3>
+         </div>
+
+         <div class="vid">
+            <video src="video/21_11_17 - 17.59.30.mp4"  muted></video>
+            <h3 class="title"> 06.karen try to delivery parcel</h3>
+         </div>
+
+        </div>
+    </div>
+
+<!-- home section ends -->
+
+
+
+<!-- Setting section starts  -->
+
+<section class="dishes" id="dishes">
+
+    <h3 class="sub-heading"> our setting Section </h3>
+    <h1 class="heading"> Setting </h1>
+
+    <div class="box-container">
+
+
+
+        <!-- start solenoid com  -->
+
+        <div class="box">
+            <div class="container4">
+
+                <button class="btn-11" onclick="sendMsg()">Turn on</button>
+                <button class="btn-21" onclick="sendMsg1()">Turn off</button>
+            
+            <h3>ON/OFF Solenoid Lock</h3><br><br><br><br><br><br><br><br>
+            </div>
+        </div>
+
+
+        <!-- solenoid connectio start-->
+        <script>
+            // Create WebSocket connection.
+            const socket = new WebSocket('ws://192.168.246.186:5000');
+        
+            // Connection opened
+            socket.addEventListener('open', function (event) {
+                console.log('Connected to the WS Server!')
+            });
+        
+            // Connection closed
+            socket.addEventListener('close', function (event) {
+                console.log('Disconnected from the WS Server!')
+            });
+        
+            // Listen for messages
+            socket.addEventListener('message', function (event) {
+                console.log('Message from server ', event.data);
+            });
+            // Send a msg to the websocket
+            const sendMsg = () => {
+                socket.send('b');
+            }
+            const sendMsg1 = () => {
+                socket.send('c');
+            }
+        </script>
+
+        <!-- solenoid connectio stop-->
+        <!-- stop solenoid com -->
+
+
+
+        <!--data start-->
+
+        <div class="box">
+            <img src="#" alt="">
+            <h3>Data</h3>
+        </div>
+        <!--data stop-->
+    
+        <!--storage start-->
+        <div class="box">
+            <img src="#" alt="">
+            <h3>storage</h3>
+            
+        </div>
+        <!--storage stop-->
+        
+
+</section>
+
+<!-- dishes section ends -->
+
+<!-- about section starts  -->
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<section class="about" id="about">
+  
+
+    <h3 class="sub-heading"> about us </h3>
+    <h1 class="heading"> why choose us? </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <img src="images/blue.png" alt="">
+        </div>
+
+        <div class="content">
+            <h3>best secure smart mailbox in the country</h3>
+            <p>This Secure Smart Mailbox is a design that help consumer to protect their parcel or mail from being stole by people!</p>
+
+    </div>
+
+</section>
+
+<!-- about section ends -->
+
+
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="credit"> copyright @ 2021 by <span>SS-BOX</span> </div>
+
+</section>
+
+<!-- footer section ends -->
+
+<!-- loader part  -->
+<div class="loader-container">
+    <img src="images/loader2.gif" alt="">
+</div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+</body>
+</html>
+
